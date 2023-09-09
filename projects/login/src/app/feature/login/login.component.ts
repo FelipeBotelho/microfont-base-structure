@@ -9,10 +9,5 @@ import { AuthService } from '@@auth';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private readonly authService: AuthService, private readonly router: Router) {}
-
-  login(user: User) {
-    this.authService.login(user);
-    this.router.navigate(['/login']);
-  }
+  constructor(public authService: AuthService, private readonly router: Router) {}
 }

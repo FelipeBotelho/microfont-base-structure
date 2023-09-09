@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { isLogged } from '../../projects/auth/src/lib/is-logged.guard';
-import { isNotLogged } from '@@auth';
+import { AuthGuard } from '../../projects/auth/src/lib/is-logged.guard';
 
 const routes: Routes = [
   {
     path: '',
-    canMatch: [isLogged],
+    redirectTo: '/home', pathMatch: 'full'
+
+  },
+  {
+    path: 'home',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
-    path: '**',
-    canMatch: [isNotLogged],
+    path: 'authentication',
     loadChildren: () => import('@@login').then((m) => m.LoginModule),
   },
 ];
@@ -21,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

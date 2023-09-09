@@ -23,7 +23,7 @@ export class UsersService {
   deleteUser(user: User) {
     let users: User[] = JSON.parse(String(localStorage.getItem('users'))) ?? [];
 
-    users = users.filter(({ username }) => username !== user.username);
+    users = users.filter(({ displayName }) => displayName !== user.displayName);
 
     localStorage.setItem('users', JSON.stringify(users));
   }

@@ -13,7 +13,7 @@ export class DashboardComponent {
   constructor(private readonly authService: AuthService, private readonly router: Router) { }
 
   logout() {
-    this.authService.logout();
+    this.authService.SignOut();
     this.router.navigate(['/logout']);
 
   }

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "angular-microfrontend"
+  },
+  "targets": {
+    "angular-microfrontend": {
+      "hosting": {
+        "app-micro": [
+          "angular-microfrontend"
+        ]
+      }
+    }
+  }
+}
