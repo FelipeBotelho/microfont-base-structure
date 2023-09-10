@@ -5,10 +5,11 @@
   "targets": {
     "angular-microfrontend": {
       "hosting": {
-        "app-micro": [
+        "angular-microfrontend": [
           "angular-microfrontend"
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
